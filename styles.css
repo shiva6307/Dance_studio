@@ -1,0 +1,583 @@
+/*Reset default styling */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Navigation Bar */
+nav {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Align logo on the left side */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Navigation links on the right side */
+.nav-right {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* List item spacing */
+.nav-right li {
+    margin-left: 30px;
+}
+
+/* Navigation links with hover effects */
+.nav-right li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 10px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Underline effect on hover */
+.nav-right li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6347;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect: Background color, underline, and text color change */
+.nav-right li a:hover {
+    background: #555;
+    border-radius: 5px;
+    color: #ff6347;
+    transform: scale(1.1); /* Slight scale up */
+}
+
+/* Underline expands on hover */
+.nav-right li a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Animation on page load */
+.nav-right li a {
+    animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('poster_studio.jpg') no-repeat center center/cover;
+
+    height: 100vh;
+    color: #fff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-content button:hover {
+    background: #ff4500;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Classes Section */
+#classes {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    height:100vh;
+}
+
+#classes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.class-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: calc(25% - 40px);
+    vertical-align: top;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+}
+
+.class-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.class-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.class-card button {
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.class-card button:hover {
+    background: #555;
+}
+
+/* Facilities Section */
+#facilities {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#facilities h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.facility-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: calc(25% - 40px);
+    vertical-align: top;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.facility-card:hover {
+    transform: translateY(-10px);
+}
+
+.facility-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.facility-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.facility-card button {
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.facility-card button:hover {
+    background: #555;
+}
+
+
+
+/* Gallery Section */
+#gallery {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+}
+
+#gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gallery-slider {
+    position: relative;
+    width: 70vw; /* 70% of viewport width */
+    height: 70vh; /* 70% of viewport height */
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-card {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.gallery-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Adjusts the image to cover the card area */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-card img:hover {
+    transform: scale(1.05);
+}
+
+.nav-btn {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s;
+    z-index: 1;
+}
+
+.nav-btn:hover {
+    background: #ff4500;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.schedule-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+}
+
+.schedule-block:nth-of-type(2) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.day-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.day-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.day-card.active {
+    background: linear-gradient(45deg, #f06, #f90);
+    color: #fff;
+}
+
+.timing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.morning-icon {
+    background: url('sun-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.evening-icon {
+    background: url('moon-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.closed-icon {
+    background: url('closed-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.closed {
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .schedule-block {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-block {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+/* Contact Us Section */
+ #contact {
+    background: #fff;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: #444;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-card form {
+    margin-bottom: 30px;
+}
+
+.contact-card form input, 
+.contact-card form textarea {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-card form button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-card form button:hover {
+    background: #ff4500;
+}
+
+.contact-details p {
+    margin-bottom: 15px;
+}
+
+.contact-details a {
+    color: #ff6347;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #ff4500;
+}
+ 
+/* About us */
+ .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #18254a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #fff;
+    text-align: justify;
+} 
+
+
+
+
+
+ 
+
+
+
+/* Footer */
+
+
+
+footer {
+    background: #35bcbf;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+
+.connect-with-us {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 50px; /* Increase the size of the logos */
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.footer-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
